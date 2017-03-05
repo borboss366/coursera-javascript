@@ -1,0 +1,139 @@
+/*  I'm leaving some data in comments 
+    here just for myself */
+
+
+/*  In this case the sizes of the container 
+    are determined by padding + border + width */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oxygen', sans-serif;
+  background-color: #114433;
+  background-repeat: repeat-y;
+  background-position: top right;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.75em;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .col-desktop-1,
+  .col-desktop-2,
+  .col-desktop-3 {
+    float: left;
+    position: relative;
+  }
+  .col-desktop-1 {
+    width: 33.33%;
+  }
+  .col-desktop-2 {
+    width: 33.33%;
+  }
+  .col-desktop-3 {
+    width: 33.33%;
+  }
+  .body-desktop {
+    background-image: url("desktop.png");
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-pad-1,
+  .col-pad-2,
+  .col-pad-3 {
+    float: left;
+    position: relative;
+  }
+  .col-pad-1 {
+    width: 50%;
+  }
+  .col-pad-2 {
+    width: 50%;
+  }
+  .col-pad-3 {
+    width: 100%;
+  }
+  .body-pad {
+    background-image: url("pad.png");
+  }
+}
+
+@media (max-width: 767px) {
+  .col-mobile-1,
+  .col-mobile-2,
+  .col-mobile-3 {
+    float: left;
+    position: relative;
+  }
+  .col-mobile-1 {
+    width: 100%;
+  }
+  .col-mobile-2 {
+    width: 100%;
+  }
+  .col-mobile-3 {
+    width: 100%;
+  }
+  .body-pad {
+    background-image: url("mobile.png");
+  }
+}
+
+.tree-name-red,
+.tree-name-yellow,
+.tree-name-magenta {
+  position: absolute;
+  padding: 3px 5px 3px 5px;
+  right: 0px;
+  top: 0px;
+  border: 1px solid black;
+  font-size: 1.25em;
+}
+
+.tree-name-red {
+  background-color: red;
+}
+
+.tree-name-yellow {
+  background-color: yellow;
+}
+
+.tree-name-magenta {
+  background-color: magenta;
+}
+
+.tree-info-pine,
+.tree-info-fir,
+.tree-info-cedar {
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
+  margin: 20px 20px 20px 20px;
+  padding: 40px 10px 10px 10px;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.tree-info-pine {
+  background-image: url("pine.png");
+}
+.tree-info-fir {
+  background-image: url("fir.png");
+}
+.tree-info-cedar {
+  background-image: url("cedar.png");
+}
+
+.tree-info-pine:hover,
+.tree-info-fir:hover,
+.tree-info-cedar:hover {
+  background-color: #ddd;
+}
