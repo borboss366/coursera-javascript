@@ -32,31 +32,21 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 
-
-// This is my personal addition to this example
-// In case the name length is zero or name is undefined
-(function (window) {
-  var unknownSpeaker = {};
-  unknownSpeaker.speak = function() {
-    console.log("You'd better get a name, buddy, otherwise you can't complete exciting javascript course at Coursera");
-  }
-  window.unknownSpeaker = unknownSpeaker;
-})(window);
-
-
 (function printNames() {
-  var names = [undefined, "", "Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim", "", undefined];
   
   for (var name of names) {
     if (name && name.length > 0) {
       var firstLetter = name.charAt(0).toLowerCase();
+
       if (firstLetter === "j") {
         byeSpeaker.speak(name);
       } else {
         helloSpeaker.speak(name);
       }
     } else {
-      unknownSpeaker.speak();
+      // in case the name is undefined, or the length of name is 0
+      helloSpeaker.speak(name);
     }
   };
 })();
