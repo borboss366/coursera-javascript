@@ -1,19 +1,18 @@
+
 $(function () {
   var hide = function() {
-    $("#menu-id").css("display", "none");
+    $("#menu-id").addClass("not-show");
   };
 
   var show = function() {
-    $("#menu-id").css("display", "block");
+    $("#menu-id").removeClass("not-show");
   };
 
   var isShown = function() {
-    return $("#menu-id").css("display") === "block"; 
+    return !$("#menu-id").hasClass("not-show"); 
   }
 
   $("#toggle-nav-button-id").click(function(event) {
-    console.log("I was clicked");
-    
     if (isShown()) {
       hide();
     } else {
@@ -25,3 +24,4 @@ $(function () {
     hide();
   });
 });
+
