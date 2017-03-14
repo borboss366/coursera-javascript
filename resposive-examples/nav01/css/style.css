@@ -267,6 +267,14 @@ div.menuitem:focus div.second-menu-data {
     padding: 10px;
   }
 
+  .show {
+    display: block;
+  }
+
+  .not-show {
+    display: none;
+  }
+
   .menudata .hoverlink {
     clear: both;
     font-size: 1.5em;
