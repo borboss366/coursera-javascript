@@ -1,0 +1,287 @@
+/*
+ * This stuff makes all the elements calculate its size from padding + border
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  background-color: black;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.container {
+}
+
+.container::after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+#logo {
+  float: left;
+  border-radius: 10px;
+}
+
+.toggle-button {
+  display: none;
+}
+
+/* If there is no direct link*/
+div.menudata > div.menuitem {
+  cursor: default;
+}
+
+.nav-menu a {
+  text-decoration: none;
+}
+
+.hoverlink {
+  background-color: #ccc;
+}
+
+.hoverlink:hover {
+  background-color: #fff;
+}
+
+.hoverlink:focus {
+  background-color: #fff;
+}
+
+div.menuitem:hover div.second-menu-data {
+  display: block;
+}
+
+div.menuitem:focus div.second-menu-data {
+  display: block;
+}
+
+
+
+
+/*
+@media (min-width: 1200px) {
+}
+*/
+
+@media /*(max-width: 1199px) and*/ (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  .public-media-data {
+    float: left;
+    position: relative;
+    height: 200px;
+    padding-top: 12px;
+  }
+
+  .menudata {
+    margin-left: 30px;
+  }
+
+  .second-menu-data {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    right: 0px;
+  }
+
+  #logo {
+    background-image: url("../img/opentrons.png");
+    width: 700px;
+    height: 200px;
+  }
+
+  .hoverlink {
+    font-size: 2em;
+ 
+    padding-left: 10px;
+    padding-right: 10px;
+
+    margin-bottom: 14px;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+  }
+
+  .menudata .hoverlink {
+    float: left;
+    position: relative;
+
+    font-size: 1.5em;
+    margin: 0px;
+
+    text-align: center;
+
+    margin-right: 20px;
+
+    border-top: none;
+    border-left: 4px solid white;
+  }
+
+  .menudata > .hoverlink {
+    min-width: 130px;
+  }
+
+  .menudata > a > .hoverlink {
+    min-width: 130px;
+  }
+
+  .second-menu-data .hoverlink {
+    width: 100%;
+    font-size: 0.8em;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .container {
+    width: 745px;
+  }
+
+  #logo {
+    background-image: url("../img/opentrons-medium.png");
+    width: 350px;
+    height: 100px;
+  }
+  
+  .public-media-data {
+    float: left;
+    padding-top: 15px;
+    position: relative;
+    width: 390px;
+    height: 40px;
+  }
+
+  .menudata {
+    float: left;
+    padding-top: 15px;
+    position: relative;
+    width: 390px;
+    height: 40px;
+  }
+  .second-menu-data {
+    display: none;
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .hoverlink {
+    float: left;
+    position: relative;
+    font-size: 1.2em;
+ 
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+  }
+
+  .second-menu-data .hoverlink {
+    font-size: 0.8em;
+    width: 100%;
+
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  #logo {
+    background-image: url("../img/opentrons-small.png");
+    width: 100px;
+    height: 100px;
+  }
+
+  .public-media-data {
+    float: left;
+    position: relative;
+    height: 100px;
+    padding-top: 10px;
+  }
+
+  .public-media-data .hoverlink {
+    font-size: 1.0em;
+    position: relative;
+    margin-bottom: 6px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  #toggle-nav-button-id {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding-top: 26px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
+  #toggle-nav-button-id:hover {
+    background-color: #fff; 
+  }
+  #toggle-nav-button-id:focus {
+    background-color: #fff; 
+  }
+
+  #toggle-nav-button-id .line {
+    width: 60px;
+    border: 2px solid black;
+  }
+  
+  #toggle-nav-button-id .line+.line{
+    margin-top: 8px;
+  }
+  
+  .menudata {
+    display: block;
+    position: relative;
+    float:left;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .menudata .hoverlink {
+    clear: both;
+    font-size: 1.5em;
+    border: 2px solid white;
+    text-align: center;
+  }
+
+  .second-menu-data {
+    display: block;
+  }
+  
+  .second-menu-data .hoverlink {
+    position: relative;
+    float: left;
+    font-size: 0.8em;
+    width: 100%;
+  }
+}
